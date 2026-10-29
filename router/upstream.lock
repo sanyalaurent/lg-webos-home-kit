@@ -1,0 +1,4 @@
+# Public upstream release; not a firmware image. MIT upstream and its third-party components stay separate.
+VERSION=v1.0.6
+URL=https://github.com/bol-van/zapret2/releases/download/v1.0.6/zapret2-v1.0.6-openwrt-embedded.tar.gz
+SHA256=51bed396f3737ed6358006772cd50fe97a405ec9bb8886426cb004b1dd094ede

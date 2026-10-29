@@ -1,0 +1,13 @@
+{
+  "firmware_family": "unknown",
+  "root_shell": null,
+  "architecture": "unknown",
+  "kernel": "unknown",
+  "firewall": "unknown",
+  "nfqueue": null,
+  "procd": null,
+  "persistent_storage": null,
+  "available_storage_kib": null,
+  "available_memory_kib": null,
+  "offload_reviewed": null
+}
