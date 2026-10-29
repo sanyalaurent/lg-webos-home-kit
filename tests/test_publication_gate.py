@@ -31,6 +31,11 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(gate.findings(Path(".env.example"), b"TARGET_HOST=TV_HOST"), [])
         self.assertTrue(gate.findings(Path(".env"), b"TARGET_HOST=TV_HOST"))
 
+    def test_documented_system_path_does_not_allow_other_home_paths(self):
+        self.assertEqual(gate.findings(Path("root-guide.md"), b"/home/root/.ssh/authorized_keys"), [])
+        client_path = "/" + "home/" + "example-client/.ssh/config"
+        self.assertTrue(gate.findings(Path("notes.md"), client_path.encode()))
+
 
 if __name__ == "__main__":
     unittest.main()

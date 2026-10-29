@@ -1,0 +1,18 @@
+{
+  "favorites": [],
+  "hidden": [],
+  "background": "slate",
+  "show_home_names": false,
+  "show_app_names": true,
+  "hour_24": true,
+  "reduced_motion": true,
+  "show_seconds": false,
+  "greeting_name": "",
+  "input_modes": {},
+  "input_names": {},
+  "show_weather": false,
+  "weather_location": null,
+  "temperature_unit": "celsius",
+  "language": "en",
+  "text_rendering": "msaa"
+}

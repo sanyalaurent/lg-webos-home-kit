@@ -18,7 +18,9 @@ def main():
             subprocess.run(["sh", "-n", str(path)], cwd=ROOT, check=True)
         elif path.suffix == ".py":
             ast.parse(path.read_text(encoding="utf-8"), filename=str(relative))
-    for directory in ("tests", "router/tests", "tv/tests"):
+        elif path.suffix == ".js":
+            subprocess.run(["node", "--check", str(path)], cwd=ROOT, check=True)
+    for directory in ("tests", "router/tests", "tv/tests", "tv/launcher/tests", "tv/settings/tests"):
         if not (ROOT / directory).is_dir():
             raise SystemExit("Missing required test directory: " + directory)
         subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", directory, "-p", "test_*.py", "-v"], cwd=ROOT, check=True)

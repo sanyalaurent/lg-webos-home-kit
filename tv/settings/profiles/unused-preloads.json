@@ -1,0 +1,5 @@
+{
+  "description": "Empty until the owner selects unused applications. Copy only needed IDs into settings; no runtime policies are changed.",
+  "available_settings": ["browser-preload-off", "netflix-preload-off"],
+  "settings": []
+}

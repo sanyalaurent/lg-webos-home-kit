@@ -18,6 +18,8 @@ RULES = [
 ]
 IP_RE = re.compile(r"(?<![\w.])(?:\d{1,3}\.){3}\d{1,3}(?![\w.])")
 HOME_NETWORKS = [ipaddress.ip_network(n) for n in ("10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16")]
+# Public upstream HBC system path; allow documenting it without allowing client home directories.
+PUBLIC_SYSTEM_PATHS = ("/home/root/.ssh/authorized_keys",)
 
 
 def findings(path, data):
@@ -34,7 +36,11 @@ def findings(path, data):
         return result + [(0, "non-UTF-8 data")]
     for number, line in enumerate(content.splitlines(), 1):
         for label, pattern in RULES:
-            if pattern.search(line):
+            inspected = line
+            if label == "home directory":
+                for system_path in PUBLIC_SYSTEM_PATHS:
+                    inspected = inspected.replace(system_path, "<documented-system-path>")
+            if pattern.search(inspected):
                 result.append((number, label))
         # Definitions of CIDR ranges are generic policy, not a home configuration.
         if path.as_posix() == "tools/check_public.py" and line.startswith("HOME_NETWORKS ="):

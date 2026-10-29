@@ -1,0 +1,4 @@
+{
+  "description": "Opt-in candidate: only existing on/off scalar fields. Optional consent agreements remain a separate menu step.",
+  "settings": ["live-plus-off", "live-promotion-off", "limit-ad-tracking", "handsfree-voice-off"]
+}

@@ -1,5 +1,10 @@
 # YouTube AdFree для rooted webOS
 
+Другие LG-модули: [Developer Mode](../docs/LG_DEVELOPER_MODE.md),
+[root и Homebrew Channel](../docs/LG_ROOT.md), [быстрая оболочка Luma](launcher/README.md),
+[приватность и предзагрузка](settings/README.md), [настройка Power/Home](../docs/LG_TUNING.md).
+Ниже описан только отдельный инсталлятор YouTube.
+
 Этот компонент устанавливает официальный upstream **RF1705 YouTube Cobalt AdFree 2.0.6-beta** как замену payload существующего нативного YouTube. SAM metadata и ID `youtube.leanback.v4` сохраняются: второй значок не создаётся. Это собственные интеграционные скрипты, не форк движка. Код и бинарные файлы upstream в этой репозитории не распространяются.
 
 Нужны уже настроенные **root SSH**, Python 3.9+ и OpenSSH на компьютере, стандартные `sh`, `tar`, `sha256sum`, `od`, `stat`, `readlink` на ТВ. Проверяются ELF32 little-endian ARM исходного runtime и наличие `/lib/ld-linux.so.3` в системе и jail; другое или неизвестное ABI отклоняется. Получение root и exploits здесь не реализуются. VPN не используется.
